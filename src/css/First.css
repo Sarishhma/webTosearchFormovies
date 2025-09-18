@@ -1,0 +1,51 @@
+.movie-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  max-width: 900px;
+  width: 100%;
+}
+
+.movie-poster {
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.movie-title {
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: #7960a5;
+}
+
+.movie-overview {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.movie-date {
+  font-size: 1rem;
+  color: #aaa;
+}
