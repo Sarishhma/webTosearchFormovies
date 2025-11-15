@@ -106,3 +106,214 @@
   transform: scale(1.04);
   transition-duration: 0.1s;
 }
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px 20px;
+}
+
+.loading-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #e50914;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  letter-spacing: 2px;
+}
+
+/* Netflix N Animation */
+.netflix-loader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.netflix-letter {
+  width: 20px;
+  height: 60px;
+  background: #e50914;
+  animation: netflix-bounce 1.4s infinite ease-in-out;
+}
+
+.netflix-letter:nth-child(1) { animation-delay: -0.32s; }
+.netflix-letter:nth-child(2) { animation-delay: -0.16s; }
+.netflix-letter:nth-child(3) { animation-delay: 0s; }
+
+@keyframes netflix-bounce {
+  0%, 80%, 100% {
+    transform: scaleY(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scaleY(1.2);
+    opacity: 1;
+  }
+}
+
+/* Film Reel Animation */
+.film-reel {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: reel-spin 2s infinite linear;
+}
+
+@keyframes reel-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Progress Bar */
+.loading-progress {
+  width: 300px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+  background: #e50914;
+  border-radius: 2px;
+  animation: loading-fill 2s infinite ease-in-out;
+  transform-origin: left;
+}
+
+@keyframes loading-fill {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* Loading Text */
+.loading-text {
+  font-size: 1.1rem;
+  color: #cccccc;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Error Styles */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: #e50914;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.retry-button {
+  background: linear-gradient(135deg, #e50914, #b20710);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+}
+
+.retry-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+}
+
+/* Responsive Loading */
+@media (max-width: 768px) {
+  .loading-title {
+    font-size: 2rem;
+  }
+  
+  .netflix-letter {
+    width: 15px;
+    height: 45px;
+  }
+  
+  .film-reel {
+    font-size: 2.5rem;
+  }
+  
+  .loading-progress {
+    width: 250px;
+  }
+  
+  .error-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-title {
+    font-size: 1.8rem;
+  }
+  
+  .netflix-letter {
+    width: 12px;
+    height: 40px;
+  }
+  
+  .film-reel {
+    font-size: 2rem;
+  }
+  
+  .loading-progress {
+    width: 200px;
+  }
+  
+  .error-title {
+    font-size: 1.5rem;
+  }
+  
+  .error-message {
+    font-size: 1rem;
+  }
+}
