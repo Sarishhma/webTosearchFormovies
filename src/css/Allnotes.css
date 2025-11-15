@@ -262,7 +262,7 @@ body {
 
 /* Loading state for images */
 .allnotes-movie-card img:not([src]),
-.allnotes-movie-card img[src=""]) {
+.allnotes-movie-card img[src=""] {
   background: linear-gradient(90deg, #1a1a1a 25%, #222 50%, #1a1a1a 75%);
   background-size: 800px 100%;
   animation: allnotes-shimmer 2s infinite linear;
