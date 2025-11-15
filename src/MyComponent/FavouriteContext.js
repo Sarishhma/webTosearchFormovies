@@ -18,9 +18,6 @@ export function FavouriteProvider({ children }) {
     setFavourite(prev => prev.filter(fav => fav.id !== id));
   };
 
-
-  
-
   // Save to localStorage whenever favourites change
   useEffect(() => {
     localStorage.setItem("favourite", JSON.stringify(favourite));

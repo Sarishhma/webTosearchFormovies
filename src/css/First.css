@@ -1,51 +1,212 @@
-.movie-detail {
+/* First Component Styles - Netflix Style */
+.first-movie-detail {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
-  background: linear-gradient(135deg, #141e30, #243b55);
+  align-items: flex-start;
+  padding: 60px 40px;
+  background: #000;
   min-height: 100vh;
   color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  position: relative;
 }
 
-.movie-card {
+.first-movie-card {
   display: flex;
   flex-direction: row;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-  max-width: 900px;
+  gap: 40px;
+  background: transparent;
+  max-width: 1200px;
   width: 100%;
+  align-items: flex-start;
 }
 
-.movie-poster {
-  width: 350px;
-  height: auto;
+.first-movie-poster {
+  width: 300px;
+  height: 450px;
   object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  flex-shrink: 0;
 }
 
-.movie-info {
-  padding: 20px;
+.first-movie-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.first-movie-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.first-movie-overview {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #cccccc;
+  font-weight: 400;
+  max-width: 600px;
+}
+
+.first-movie-date {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.first-movie-date strong {
+  color: #e50914;
+  font-weight: 700;
+}
+
+/* Add to Watch Button */
+.first-movie-info button {
+  background: linear-gradient(135deg, #e50914, #b20710);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+  margin-top: 10px;
+}
+
+.first-movie-info button:hover {
+  background: linear-gradient(135deg, #ff1a1a, #e50914);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(229, 9, 20, 0.6);
+}
+
+.first-movie-info button:active {
+  transform: translateY(0);
+}
+
+/* Close Button */
+.fristbutton {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 1000;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 18px;
 }
 
-.movie-title {
-  font-size: 15px;
-  margin-bottom: 15px;
-  color: #7960a5;
+.fristbutton:hover {
+  background: #e50914;
+  transform: scale(1.1);
+  border-color: #e50914;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.5);
 }
 
-.movie-overview {
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #ddd;
+.fristbutton:active {
+  transform: scale(1.05);
 }
 
-.movie-date {
-  font-size: 1rem;
-  color: #aaa;
+/* Responsive Design */
+@media (max-width: 968px) {
+  .first-movie-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .first-movie-poster {
+    width: 280px;
+    height: 420px;
+  }
+  
+  .first-movie-title {
+    font-size: 2.5rem;
+  }
+  
+  .first-movie-overview {
+    font-size: 1.1rem;
+  }
+  
+  .first-movie-info button {
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .first-movie-detail {
+    padding: 40px 20px;
+  }
+  
+  .first-movie-title {
+    font-size: 2.2rem;
+  }
+  
+  .first-movie-overview {
+    font-size: 1rem;
+  }
+  
+  .fristbutton {
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .first-movie-detail {
+    padding: 30px 15px;
+  }
+  
+  .first-movie-poster {
+    width: 250px;
+    height: 375px;
+  }
+  
+  .first-movie-title {
+    font-size: 1.8rem;
+  }
+  
+  .first-movie-overview {
+    font-size: 0.95rem;
+  }
+  
+  .first-movie-info button {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+  
+  .fristbutton {
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
 }

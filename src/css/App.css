@@ -1,64 +1,108 @@
-/* src/styles/App.css */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0d0d0d;
-  color: #f5f5f5;
-}
-
-h1 {
-  text-align: center;
-  margin: 20px 0;
-  color: #ab5dcc;
- 
-}
-
 .movies-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   padding: 20px;
-  cursor: pointer;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
 }
 
+/* Movie Card - Full width stacked */
 .movie-card {
+
   background: #1a1a1a;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 12px;
+  padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease;
-   text-decoration: none;
-  
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  width: 100%;
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(199, 125, 255, 0.2);
+  border-color: #c77dff;
 }
 
+/* Image */
 .movie-card img {
   width: 100%;
-  height: 330px;
+  max-width: 200px;
+  height: 280px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  background: #2a2a2a;
+  margin: 0 auto 15px auto;
 }
 
+/* Remove Button */
+.remove-btn {
+  background: #ff4668;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 15px;
+  max-width: 200px;
+  margin: 0 auto 10px auto;
+  font-size: 14px;
+}
+
+.remove-btn:hover {
+  background: #e63946;
+  transform: translateY(-2px);
+}
+
+/* Movie Title */
 .movie-title {
-  margin-top: 10px;
-  font-size: 11px;
-  font-weight: bold;
-  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+  line-height: 1.3;
 }
-.search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.favourite-page h1{
+  text-align: center;
+  color: red;
+  font-weight:bolder;
+   font-family:'Times New Roman', Times, serif;
+   margin-top: 10px;
 }
-.search input{
-    padding: 5px;
-    border-radius:5px ;
-    border: blue;
-    background-color: rgb(13, 13, 14);
-    color: white;
+.empty-favourites h1{
+  text-align: center;
+  font-family:'Times New Roman', Times, serif;
+}
+.back-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #e50914, #b20710);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  transform: scale(1);
+  will-change: transform;
+}
+
+.back-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+  background: linear-gradient(135deg, #ff1a1a, #e50914);
+}
+
+.back-btn:active {
+  transform: scale(1.04);
+  transition-duration: 0.1s;
 }
